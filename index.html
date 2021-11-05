@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<head>
+  	<meta charset="utf-8">
+  	<title>Nora's cute</title>
+  	<link rel="stylesheet"href="css/style.css">
+</head>
+
+<body>
+  <!--Head part-->
+  <div class="grid-container">
+      <img id="nora" src="imgs/nora.JPG">
+      <h1 id="web_title">Nora's ednpoints test</h1>
+  </div>
+  <br><br><br
+  <!--API fetch part-->
+  <h2>Service Users: deplyed on EC2</h2>
+  <div class="grid-container">
+    <div>
+		<button id="fetch_all_users">Get all users</button>
+                <br><br>
+		<button id="fetch_all_addresses">Get all addresses</button>
+                <br><br>
+                <form name="uid_form">
+                  <input type="text" id="uid">
+                  <button id="fetch_user_by_uid">Get user by uid</button>
+                </form>
+                <br><br>
+                <form name="aid_form">
+                  <input type="text" id="aid">
+                  <button id="fetch_address_by_aid">Get address by aid</button>
+                </form>
+                <br><br>
+    </div>
+    <div id="show_place">
+    </div>
+  </div>
+	<!--JS resource-->
+	<script type="text/javascript" src="js/index.js"></script>
+</body>

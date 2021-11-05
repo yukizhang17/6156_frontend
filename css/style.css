@@ -1,0 +1,36 @@
+body {
+  font-family: system-ui;
+  background: #f06d06;
+  color: white;
+  text-align: left;
+  margin: 50px;
+ }
+
+ button {
+   background-color: #FFFF00;
+   border: none;
+ }
+
+ div {
+   padding: 0px;
+ }
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5px;
+}
+
+#nora {
+  border-radius: 100%;
+  height: 200px;
+  width: 200px;
+  margin: 0px;
+}
+
+#nora_img {
+  height: 210px;
+  width: 210px;
+  margin: 0px;
+}
