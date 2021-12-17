@@ -3,11 +3,30 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Auth0Provider } from "@auth0/auth0-react";
+import history from "./pages/history"
+
+const onRedirectCallback = (appState: any) => {
+  history.push(
+    appState && appState.returnTo ? appState.returnTo : window.location.pathname
+  );
+};
+
+const providerConfig = {
+  domain: "lypz-4156.us.auth0.com",
+  clientId: "SeLMIAZmDMlcGzcjvyOVI6vrw4ZvLS8V",
+  audience: "https://LYPZ-4156",
+  redirectUri: window.location.origin,
+  onRedirectCallback,
+};
 
 ReactDOM.render(
-  <React.StrictMode>
+
+  <Auth0Provider {...providerConfig}>
+
     <App />
-  </React.StrictMode>,
+
+  </Auth0Provider>,
   document.getElementById('root')
 );
 

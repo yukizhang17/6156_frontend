@@ -22,6 +22,7 @@ function Navigation() {
             <Nav.Link href="profile">Your Profile</Nav.Link>
             <Nav.Link href="signup">Signup</Nav.Link>
             <Nav.Link href="signin">Signin</Nav.Link>
+            <Nav.Link href="logout">Logout</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
