@@ -1,34 +1,35 @@
 import './App.css';
-import Navigation from './components/nav/NavBar';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Explore from './pages/explore';
-import Profile from './pages/profile';
-import Signup from './pages/signup';
-import Signin from './pages/signin';
-import Home from './pages/home';
-
+import { Button } from 'react-bootstrap';
+import { useState, useEffect } from 'react';
+import Unav from './pages/u_nav';
+import Bhome from './pages/b_home';
+import { setGlobal, useGlobal } from 'reactn';
 
 function App() {
+  // setGlobal({
+  // userType: 'user'
+  // });
+
+
+  // const[isBusiness, setIsBusiness] = useGlobal(keyof 'userType');
+  // const handleClick = () => {
+  //   setUserType();
+  // }
+
+  // useEffect(() =>{
+  //   handleClick();
+  // }, [])
+
+
   return (
-    <>
-
-      <Navigation />
-      <Router>
-
-       <Routes>
-
-        <Route path="/" element={<Home />} />
-        <Route path='/explore' element={<Explore />} />
-        <Route path='/profile' element={<Profile />}/>
-        <Route path='/signin' element={<Signin />} />
-        <Route path='/signup' element={<Signup />} />
-       </Routes>
-
-      </Router>
-
-    </>
-  );
+  <>
+    {/* <Button onClick={handleClick}>Change</Button> */}
+    {/* {userType === true ? <Uhome /> : <Bhome />} */}
+    <Unav />
+  </>
+  )
 }
+
 
 export default App;

@@ -6,12 +6,15 @@ import Ecard from '../components/exploreCard/exploreCard';
 function Explore () {
   const[data, setData] = useState([] as any[]);
   const[offset, setOffset] = useState(0);
-  const[zipcode, setZipcode] = useState("");
   const[product, setProduct] = useState("");
   const url = 'https://aejlggnsac.execute-api.us-east-1.amazonaws.com/v1/product';
 
   const fetchData = async () => {
-    let response = await axios.get(url);
+    let search_url = url;
+    if (product !== '') {
+      search_url += `?name=${product}`
+    }
+    let response = await axios.get(search_url);
     console.log(response.data);
     setData(response.data);
   }
@@ -19,8 +22,8 @@ function Explore () {
   const handleInput = (event: any) => {
     event.preventDefault();
     console.log(event.target[0].value);
-    setZipcode(event.target[0].value);
     setProduct(event.target[0].value);
+    fetchData();
   }
 
   const getNext = () => {
@@ -35,6 +38,8 @@ function Explore () {
     fetchData();
   }, [])
 
+
+
   const renderCard = (data: any) => {
     return (
       <Ecard props={data} />
@@ -47,22 +52,19 @@ function Explore () {
     <div className='mb-auto'>
        <Form onSubmit={handleInput}  style={{
       display: 'grid',
-      gridTemplateColumns: 'repeat(3, 1fr)',
+      gridTemplateColumns: 'repeat(3, 0.11fr)',
       gridRowGap: '1rem',
-      gridColumnGap: '1rem',
+      gridColumnGap: '0.5rem',
       margin: '3rem'
      }}>
-         <FormGroup controlId='formBasicZipcode'>
-           <Form.Label>Zip Code</Form.Label>
-           <Form.Control type='zipcode'></Form.Control>
-         </FormGroup>
          <FormGroup controlId='formBasicProduct'>
            <Form.Label>Product</Form.Label>
            <Form.Control></Form.Control>
            </FormGroup>
            <Button size='sm' type='submit' style={{
-           marginTop: '2rem'
-         }}>Submit</Button>
+             marginTop: '2rem',
+             marginLeft: '1rem'
+         }}>Search</Button>
        </Form>
    </div>
    <div style={{

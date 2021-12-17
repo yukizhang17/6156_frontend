@@ -4,23 +4,20 @@ Nav
 } from 'react-bootstrap';
 import Image from 'react-bootstrap/Image';
 import Logo from './../../logo/nora_logo.jpg';
-import './Navbar.css';
+import './Bnav.css';
 
-function Navigation() {
+function Bnavigation() {
   return  (
   <>
     <Navbar bg="primary" expand="lg" sticky="top">
       <Container>
-        <Navbar.Brand href="/user">
+        <Navbar.Brand href='/'>
           <Image className='logo'  src={Logo} roundedCircle />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav variant="pills" className= "m-auto">
-            <Nav.Link href="/user/explore">Explore</Nav.Link>
-            <Nav.Link href="/user/profile">Your Profile</Nav.Link>
-            <Nav.Link href="/user/signup">Signup</Nav.Link>
-            <Nav.Link href="/user/signin">Signin</Nav.Link>
+            <Nav.Link href="/business/b_user">Business Profile</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
@@ -29,4 +26,5 @@ function Navigation() {
   );
 };
 
-export default Navigation;
+export default Bnavigation;
+
